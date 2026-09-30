@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>FitGenix · Admin Panel</title>
+<link rel="icon" type="image/png" href="img/logo-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div class="login" id="login">
+  <form class="login-card" id="loginForm">
+    <h1>Admin Panel</h1>
+    <p class="sub">Sign in to edit the FitGenix website content.</p>
+    <div class="a-field">
+      <label for="loginPass">Password</label>
+      <input class="a-input" type="password" id="loginPass" placeholder="Enter admin password" autocomplete="current-password" required>
+    </div>
+    <button type="submit" class="a-btn a-btn-primary" style="width:100%;justify-content:center;">Unlock panel</button>
+    <p class="login-hint">Default password: <strong>admin123</strong> — change it under <em>Settings</em> after your first login.</p>
+    <p class="login-hint">This is a front-end demo lock (no server), so it keeps out casual visitors only — not real security.</p>
+    <p style="margin-top:16px;font-size:12.5px;"><a href="index.html" style="color:var(--a-muted);">← Back to website</a></p>
+  </form>
+</div>
+
+<!-- ============ PANEL ============ -->
+<div id="adminRoot" hidden>
+
+  <header class="a-top">
+    <div class="a-brand">
+      <span class="dot"></span>
+      <span>FitGenix Admin<small>Edit anything on the website</small></span>
+    </div>
+    <div class="a-actions">
+      <span class="a-status" id="aStatus"></span>
+      <button class="a-btn" id="aPreviewToggle">👁 Preview</button>
+      <a class="a-btn" href="index.html" target="_blank" rel="noopener">View site ↗</a>
+      <button class="a-btn a-btn-danger" id="aReset">↺ Reset</button>
+      <button class="a-btn a-btn-primary" id="aSave">✓ Save changes</button>
+      <button class="a-btn" id="aLogout">Log out</button>
+    </div>
+  </header>
+
+  <div class="a-body">
+    <nav class="a-tabs" id="aTabs" aria-label="Content sections"></nav>
+    <main class="a-panel" id="aPanel"></main>
+  </div>
+
+  <aside class="a-preview" id="aPreview" hidden>
+    <div class="a-preview-bar">
+      <span>Live preview</span>
+      <span>
+        <button class="a-btn" id="aPreviewRefresh" style="padding:6px 10px;">⟳ Refresh</button>
+        <button class="a-btn" id="aPreviewClose" style="padding:6px 10px;">✕</button>
+      </span>
+    </div>
+    <iframe id="aPreviewFrame" src="index.html" title="Website preview"></iframe>
+  </aside>
+
+</div>
+
+<div class="a-toast" id="aToast"></div>
+
+<script src="js/content.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
