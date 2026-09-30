@@ -80,3 +80,4 @@ the content to a backend, before handing the panel to staff on a public URL.
   contact…) in one object, and `js/render.js` maps each key onto the markup via
   `data-cms`, `data-cms-heading`, `data-cms-src`, `data-cms-href` and `data-cms-wa` attributes.
 "# gymdemo" 
+"# gymdemo" 
